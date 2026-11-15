@@ -9,7 +9,7 @@ interface NumberInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, '
 
 const fmt = new Intl.NumberFormat('tr-TR', { maximumFractionDigits: 0 })
 
-/** Yazarken binlik ayraç (1.250.000) gösterir, form tarafına düz sayı verir. Yıl gibi alanlarda kullanma. */
+
 export const NumberInput = forwardRef<HTMLInputElement, NumberInputProps>(({ value, onChange, ...props }, ref) => (
   <Input
     ref={ref}
