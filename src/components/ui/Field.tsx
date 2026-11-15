@@ -13,7 +13,7 @@ interface FieldProps {
   className?: string
 }
 
-/** <label> içine sarar; bu sayede label-input ilişkisi için id yönetmeye gerek kalmaz. */
+
 export function Field({ label, error, hint, children, className }: FieldProps) {
   return (
     <label className={cn('block', className)}>
