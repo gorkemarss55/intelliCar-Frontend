@@ -9,12 +9,12 @@ const ACCEPTED = ['image/jpeg', 'image/png', 'image/webp']
 const MAX_FILE_MB = 15
 
 interface Props {
-  /** Kaç görsel daha eklenebilir. */
+  
   remaining: number
   onUploaded: (urls: string[]) => void
 }
 
-/** Bilgisayardan (veya sürükle-bırak ile) görsel seçtirir, sunucuya yükler ve dosya yollarını döner. */
+
 export function ImageUploader({ remaining, onUploaded }: Props) {
   const inputRef = useRef<HTMLInputElement>(null)
   const [preparing, setPreparing] = useState(false)
