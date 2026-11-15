@@ -5,7 +5,7 @@ import { Container } from '@/components/shared/Container'
 import { Spinner } from '@/components/ui/Spinner'
 import { buttonStyles } from '@/components/ui/Button'
 
-/** Sayfalar ilk açılışta değil, ihtiyaç olunca yüklenir (route bazlı code-splitting). */
+
 const page = <K extends string>(loader: () => Promise<Record<K, React.ComponentType>>, name: K): Pick<RouteObject, 'lazy'> => ({
   lazy: async () => ({ Component: (await loader())[name] }),
 })
