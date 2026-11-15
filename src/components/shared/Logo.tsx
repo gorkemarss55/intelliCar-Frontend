@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { cn } from '@/lib/cn'
 
-/** Türk plakasından esinlenen işaret + yazı logosu. */
+
 export function Logo({ className, light }: { className?: string; light?: boolean }) {
   return (
     <Link to="/" className={cn('inline-flex items-center gap-2.5', className)} aria-label="intelliCar ana sayfa">
