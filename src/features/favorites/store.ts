@@ -10,7 +10,7 @@ interface FavoritesState {
   clear: () => void
 }
 
-/** Backend'de favori yok; ilanın özeti tarayıcıda saklanır, böylece liste ilan servisine bağlı olmadan açılır. */
+
 export const useFavorites = create<FavoritesState>()(
   persist(
     (set) => ({
