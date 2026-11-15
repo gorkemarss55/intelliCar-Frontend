@@ -1,17 +1,5 @@
 #!/usr/bin/env node
-/**
- * Örnek ilan yükleyici. Backend'e doğrudan istek atar (Node 18+).
- *
- *   node scripts/seed.mjs                  # model başına 6 ilan (~290 ilan, görselli)
- *   node scripts/seed.mjs --per-model 10   # daha fazla ilan
- *   node scripts/seed.mjs --no-images      # görselsiz
- *   node scripts/seed.mjs --api http://localhost:8080/intelliCar/api/v1
- *
- * - İlanlar 8 ayrı örnek SATICI hesabıyla eklenir (satici1..8@intellicar.test, şifre: Test1234!).
- * - Yapay zekâ kullanıcının kendi ilanlarını hesaba katmadığı için öneri/fiyat tahminini kendi hesabınla dene.
- * - Görseller scripts/seed-images klasöründeki çizimlerdir; /files endpoint'i ile sunucuya yüklenir.
- * - Fiyatlar gerçek piyasa verisi değil, test amaçlı üretilmiş örneklerdir.
- */
+
 import { readFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
