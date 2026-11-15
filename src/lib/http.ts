@@ -8,7 +8,7 @@ export const http = axios.create({ baseURL: API_BASE, timeout: 30_000 })
 
 const PUBLIC_AUTH_PATHS = ['/auth/login', '/auth/register', '/auth/refresh-token']
 
-/** Göreli veya tam URL olsa bile public path'i doğru saptar */
+
 const isPublicAuthPath = (url?: string) => {
   if (!url) return false
   const relativeUrl = url.replace(API_BASE, '').replace(/^https?:\/\/[^/]+/, '')
@@ -26,7 +26,7 @@ function isExpired(jwt: string): boolean {
 
 let refreshPromise: Promise<string | null> | null = null
 
-/** Aynı anda gelen birden çok istek için tek bir yenileme isteği atılır. */
+
 export function refreshAccessToken(): Promise<string | null> {
   const { refreshToken, setSession, clear } = useAuthStore.getState()
   if (!refreshToken) return Promise.resolve(null)
@@ -52,7 +52,7 @@ http.interceptors.request.use(async (config) => {
   
   let token = useAuthStore.getState().accessToken
   
-  // Süresi dolmuş JWT'yi backend'e göndermek hata verir, önceden yenile.
+  
   if (token && isExpired(token)) {
     token = await refreshAccessToken()
   }
@@ -66,7 +66,7 @@ http.interceptors.request.use(async (config) => {
 
 type RetryConfig = InternalAxiosRequestConfig & { _retry?: boolean }
 
-/** Herkese açık okuma endpoint'leri: /car ve /car/{id} (my-cars hariç). */
+
 const isPublicRead = (c: RetryConfig) => {
   const relativeUrl = (c.url ?? '').replace(API_BASE, '').replace(/^https?:\/\/[^/]+/, '')
   return c.method === 'get' && /^\/car(?:\/(?!my-cars)[^/]+)?$/.test(relativeUrl)
@@ -82,8 +82,7 @@ http.interceptors.response.use(
 
     const sent = (original.headers?.Authorization as string | undefined)?.replace('Bearer ', '')
 
-    // Backend, yakalanmamış her sunucu hatasını (500) /error yönlendirmesi yüzünden 401 gibi döndürür.
-    // Geçerli token ile (ya da herkese açık bir endpoint'te) gelen 401 gerçek bir oturum sorunu değildir.
+   
     if ((sent && !isExpired(sent)) || (!sent && isPublicRead(original))) {
       ;(error as any).maskedServerError = true
       return Promise.reject(error)
