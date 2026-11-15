@@ -12,7 +12,7 @@ const CONFIDENCE: Record<Confidence, { label: string; tone: BadgeTone; hint: str
   HIGH: { label: 'Yüksek güven', tone: 'green', hint: 'Aynı modelden çok sayıda ilan var.' },
 }
 
-/** Önerilen aralığı piyasadaki en düşük-en yüksek fiyat çubuğu üzerinde gösterir. */
+
 function RangeBar({ e }: { e: PriceEstimate }) {
   const lo = Math.min(e.minPrice, e.market.min)
   const hi = Math.max(e.maxPrice, e.market.max)
