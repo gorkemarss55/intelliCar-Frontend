@@ -8,7 +8,7 @@ interface ModalProps {
   onClose: () => void
   title: string
   children: ReactNode
-  /** "sheet" mobilde alttan açılan panel gibi davranır. */
+  
   variant?: 'dialog' | 'sheet'
 }
 
