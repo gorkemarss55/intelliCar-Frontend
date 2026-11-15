@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/Badge'
 import { Button } from '@/components/ui/Button'
 import { ImageUploader } from './ImageUploader'
 
-/** İlan oluştururken yüklenen görselleri yönetir. İlk görsel ana görseldir. */
+
 export function ImageListEditor({ value, onChange }: { value: string[]; onChange: (urls: string[]) => void }) {
   const makePrimary = (i: number) => onChange([value[i], ...value.filter((_, idx) => idx !== i)])
   const remove = (i: number) => onChange(value.filter((_, idx) => idx !== i))
