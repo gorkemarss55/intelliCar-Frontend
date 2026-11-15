@@ -1,4 +1,4 @@
-/** Backend DTO'larının TypeScript karşılıkları (com.efeerturk.intelliCar.dto.*). */
+
 
 export type FuelType = 'GASOLINE' | 'DIESEL' | 'HYBRID' | 'ELECTRIC'
 export type Transmission = 'MANUAL' | 'AUTOMATIC'
@@ -68,7 +68,7 @@ export interface CarListItem {
   primaryImageUrl: string | null
   createdAt: string
 }
-/** /car/my-cars aynı liste DTO'sunu döner; backend DTO'ya `status` eklenirse arayüz otomatik gösterir. */
+
 export type MyCarListItem = CarListItem & { status?: CarStatus }
 
 export interface CarDetail {
