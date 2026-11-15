@@ -12,7 +12,7 @@ function CarForm({ onDone }) {
   const [f, setF] = useState(NEW); const [files, setFiles] = useState([]); const [busy, setBusy] = useState(false)
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value })
 
-  // Seçilen dosyaların önizleme adresleri; dosya listesi değişince eskiler serbest bırakılır.
+  
   const previews = useMemo(() => files.map((file) => URL.createObjectURL(file)), [files])
   useEffect(() => () => previews.forEach((u) => URL.revokeObjectURL(u)), [previews])
 
