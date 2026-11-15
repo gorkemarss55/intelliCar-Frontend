@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-// Eğer proxy yoksa 'http://localhost:8080/intelliCar/api/v1' şeklinde doğrudan backend URL'ini yazabilirsin
+
 const BASE = 'http://localhost:8080/intelliCar/api/v1'
 
 export const tokens = {
@@ -75,7 +75,7 @@ export const api = {
   
   addImages: (id, list) => http.post(`/carImage/${id}`, list).then((r) => r.data),
 
-  // Bilgisayardan resim yükler, geriye resmin URL'ini döner
+  
   upload: (file) => {
     const fd = new FormData()
     fd.append('file', file)
