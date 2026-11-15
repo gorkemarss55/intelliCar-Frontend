@@ -5,7 +5,7 @@ import { useAuthStore } from '@/features/auth/store'
 import { queryClient } from './queryClient'
 
 export function Providers({ children }: { children: ReactNode }) {
-  // Oturum süresi dolup token'lar silindiğinde önceki kullanıcının verisi önbellekte kalmasın.
+  
   useEffect(
     () =>
       useAuthStore.subscribe((state, prev) => {
