@@ -2,7 +2,7 @@ import type { CarDetail, CarListItem } from '@/types/api'
 
 export const carTitle = (c: { brand: string; model: string }) => `${c.brand} ${c.model}`
 
-/** Detay verisini liste kartında göstermek için (örn. favoriler sayfası). */
+
 export const detailToListItem = (c: CarDetail): CarListItem => ({
   id: c.id,
   brand: c.brand,
