@@ -6,7 +6,7 @@ const CITY_OPTIONS = TR_CITIES.map((c) => ({ value: c, label: c }))
 
 type Props = Omit<ComponentProps<typeof Select>, 'options' | 'placeholder'> & { placeholder?: string }
 
-/** 81 il listesinden seçtirir (react-hook-form `register` ile de çalışır). */
+
 export const CitySelect = forwardRef<HTMLSelectElement, Props>(({ placeholder = 'Şehir seç', ...props }, ref) => (
   <Select ref={ref} options={CITY_OPTIONS} placeholder={placeholder} {...props} />
 ))
