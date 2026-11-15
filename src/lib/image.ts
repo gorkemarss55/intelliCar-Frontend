@@ -25,15 +25,13 @@ export async function prepareImage(file: File): Promise<File> {
   }
 }
 
-/** 
- * Görseli hazırlar ve backend'deki /upload endpoint'ine gönderir.
- */
+
 export async function uploadCarImage(file: File): Promise<string> {
   const preparedFile = await prepareImage(file)
   const formData = new FormData()
   formData.append('file', preparedFile) // Backend RestUploadController @RequestParam("file") bekliyor
 
-  // '/files' YERİNE '/upload' OLARAK GÜNCELLENDİ
+  
   const response = await http.post<{ url: string }>('/files', formData, {
     headers: {
       'Content-Type': 'multipart/form-data',
