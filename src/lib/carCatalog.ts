@@ -1,4 +1,4 @@
-/** Marka → model listesi. Formlarda ve filtrelerde seçilebilir liste olarak kullanılır. */
+
 export const CAR_CATALOG: Record<string, string[]> = {
   Audi: ['A1', 'A3', 'A4', 'A5', 'A6', 'Q2', 'Q3', 'Q5'],
   BMW: ['1 Serisi', '2 Serisi', '3 Serisi', '4 Serisi', '5 Serisi', 'X1', 'X3', 'X5', 'i4'],
