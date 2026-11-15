@@ -11,7 +11,7 @@ import { useUpdateCar } from '../hooks'
 import { carUpdateSchema, type CarUpdateValues } from '../schemas'
 import { ImageManager } from './ImageManager'
 
-/** Backend yalnızca fiyat, kilometre, açıklama ve durum güncellemeye izin verir. */
+
 export function CarEditForm({ car }: { car: CarDetail }) {
   const navigate = useNavigate()
   const update = useUpdateCar(car.id)
@@ -20,7 +20,7 @@ export function CarEditForm({ car }: { car: CarDetail }) {
     defaultValues: { price: car.price, mileage: car.mileage, description: car.description, status: car.status },
   })
 
-  // Sistemin verdiği "incelemede" durumu seçenekte yoksa mevcut değer yine de görünsün.
+  
   const statusOptions = EDITABLE_STATUS_OPTIONS.some((o) => o.value === car.status)
     ? EDITABLE_STATUS_OPTIONS
     : [{ value: car.status, label: CAR_STATUS_LABELS[car.status] }, ...EDITABLE_STATUS_OPTIONS]
