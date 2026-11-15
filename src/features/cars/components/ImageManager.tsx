@@ -6,7 +6,7 @@ import type { CarImage } from '@/types/api'
 import { useCarImageMutations } from '../hooks'
 import { ImageUploader } from './ImageUploader'
 
-/** Yayındaki bir ilanın görsellerini doğrudan API üzerinden yönetir. */
+
 export function ImageManager({ carId, images }: { carId: string; images: CarImage[] }) {
   const { add, setPrimary, remove } = useCarImageMutations(carId)
 
