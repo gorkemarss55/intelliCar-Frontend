@@ -2,7 +2,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/cn'
 
 interface PaginationProps {
-  /** 0 tabanlı sayfa numarası (Spring ile aynı). */
+ 
   page: number
   totalPages: number
   onChange: (page: number) => void
