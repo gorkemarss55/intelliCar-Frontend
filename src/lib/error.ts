@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-/** Backend mesajları İngilizce; kullanıcıya Türkçe göstermek için bilinen mesajları eşleriz. */
+
 const TRANSLATIONS: [prefix: string, tr: string][] = [
   ['Account already exists', 'Bu e-posta ile zaten bir hesap var.'],
   ['User not found', 'Kullanıcı bulunamadı.'],
@@ -42,7 +42,7 @@ export function getErrorMessage(error: unknown): string {
       const wait = error.response.headers['retry-after']
       return wait ? `Çok fazla istek gönderdin. ${wait} saniye sonra tekrar dene.` : 'Çok fazla istek gönderdin. Biraz bekleyip tekrar dene.'
     }
-    // ApiError { exception: { message } } | ErrorMessage { ofStatic } | { alan: "mesaj" } | { message }
+   
     const raw =
       data?.exception?.message ??
       data?.ofStatic ??
