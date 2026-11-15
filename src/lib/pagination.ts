@@ -1,6 +1,6 @@
 import type { Page } from '@/types/api'
 
-/** Spring Data bazı sürümlerde sayfa bilgisini `page` alt nesnesinde döner; ikisini de destekler. */
+
 export function normalizePage<T>(raw: any): Page<T> {
   const meta = raw?.page ?? raw ?? {}
   return {
@@ -12,7 +12,7 @@ export function normalizePage<T>(raw: any): Page<T> {
   }
 }
 
-/** Boş değerleri atar, Spring'in beklediği query string için temizler. */
+
 export function compact<T extends object>(params: T): Partial<T> {
   return Object.fromEntries(
     Object.entries(params).filter(([, v]) => v !== '' && v !== undefined && v !== null && !Number.isNaN(v)),
