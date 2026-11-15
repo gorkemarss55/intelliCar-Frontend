@@ -24,8 +24,7 @@ export function Login() {
 
 export function Register() {
   const { register } = useAuth(); const nav = useNavigate()
-  // Hesap türü artık sorulmuyor. Backend bu alanı zorunlu tuttuğu için sabit BUYER gönderilir;
-  // her kullanıcı hem ilan verebilir hem teklif verebilir (backend'de rol kontrolü yok).
+  
   const [f, setF] = useState({ firstName: '', lastName: '', email: '', phone: '', password: '' }); const [busy, setBusy] = useState(false)
   const set = (k) => (e) => setF({ ...f, [k]: e.target.value })
   const submit = async (e) => { e.preventDefault(); setBusy(true)
