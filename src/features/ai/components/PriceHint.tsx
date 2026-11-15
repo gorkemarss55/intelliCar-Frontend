@@ -5,12 +5,12 @@ import type { PriceEstimateRequest } from '@/types/api'
 import { useEstimatePrice } from '../hooks'
 
 interface PriceHintProps {
-  /** Form o an eksik/geçersizse null döner. */
+ 
   buildRequest: () => PriceEstimateRequest | null
   onApply: (price: number) => void
 }
 
-/** İlan verirken fiyat alanının altında, tek tıkla piyasa fiyatı önerir. */
+
 export function PriceHint({ buildRequest, onApply }: PriceHintProps) {
   const estimate = useEstimatePrice()
   const run = () => {
