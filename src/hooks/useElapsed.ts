@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-/** `active` true iken geçen saniyeyi sayar (uzun süren yapay zekâ istekleri için). */
+
 export function useElapsed(active: boolean) {
   const [seconds, setSeconds] = useState(0)
   useEffect(() => {
