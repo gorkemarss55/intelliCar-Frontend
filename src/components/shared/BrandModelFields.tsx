@@ -9,7 +9,7 @@ interface Props {
   brand: string
   model: string
   onChange: (brand: string, model: string) => void
-  /** true: listede olmayan marka/model yazılabilir (ilan formları). false: yalnızca filtre gibi seçim. */
+  
   allowOther?: boolean
   brandError?: string
   modelError?: string
@@ -24,7 +24,7 @@ export function BrandModelFields({ brand, model, onChange, allowOther = false, b
   const modelFree = brandOther || modelOther
   const catalogModels = getModels(brand)
 
-  // Filtrede URL'den gelen, listede olmayan değer de görünür kalsın.
+  
   const brandOptions = toOpts(CAR_BRANDS)
   if (!allowOther && brand && !CAR_BRANDS.includes(brand)) brandOptions.push({ value: brand, label: brand })
   if (allowOther) brandOptions.push({ value: OTHER, label: 'Diğer…' })
