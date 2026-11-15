@@ -14,10 +14,10 @@ export const carsApi = {
   update: (id: string, body: CarUpdateRequest) => http.put<CarDetail>(`/car/${id}`, body).then((r) => r.data),
   remove: (id: string) => http.delete<void>(`/car/${id}`),
 
-  /** Bilgisayardan seçilen resmi backend'deki /upload endpoint'ine yükler ve URL döner */
+ 
   uploadImage: (file: File) => {
     const formData = new FormData()
-    formData.append('file', file) // RestUploadController @RequestParam("file") bekliyor
+    formData.append('file', file) 
 
     return http
       .post<{ url: string }>('/upload', formData, {
